@@ -22,13 +22,15 @@ public class DefaultProductService implements ProductService {
     public Long create(Product product) {
         if (product == null) {
             throw new IllegalArgumentException("Cannot be null");
-        } else if (product.getPrice().compareTo(validPrice) <= 0){
+        }
+
+        if (product.getPrice().compareTo(validPrice) <= 0) {
             throw new IllegalArgumentException("Price cannot be less or equal to 0");
-        } else if (product.getDiscount() > 100L){
+        } else if (product.getDiscount() > 100L) {
             throw new IllegalArgumentException("Discount cannot be more than 100 %");
-        } else if (product.getName().length() >= 32 || product.getName().length() <= 3){
+        } else if (product.getName().length() >= 32 || product.getName().length() <= 3) {
             throw new IllegalArgumentException("Name is too short/long");
-        }else if (product.getDiscount() < 0L) {
+        } else if (product.getDiscount() < 0L) {
             throw new IllegalArgumentException("Discount cannot be less than 0");
         }
         product.setId(PRODUCT_ID_SEQUENCE);

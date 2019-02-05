@@ -9,7 +9,7 @@ public class Product {
     private String name;
     private BigDecimal price;
     private String category;
-    private Long discount;
+    private Double discount;
     private String description;
 
     public Long getId() {
@@ -44,11 +44,11 @@ public class Product {
         this.category = category;
     }
 
-    public Long getDiscount() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Long discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 

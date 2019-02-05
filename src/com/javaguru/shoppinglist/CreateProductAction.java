@@ -25,7 +25,7 @@ public class CreateProductAction implements Action {
         System.out.println("Enter product price: ");
         String price = scanner.nextLine();
         System.out.println("Enter product discount: ");
-        Long discount = scanner.nextLong();
+        Double discount = scanner.nextDouble();
 
 
         Product product = new Product();
